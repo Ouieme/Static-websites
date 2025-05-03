@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Crete Round', serif;
+    scroll-behavior: smooth;
+}
+
+
+header{
+    background-color:#fff;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 150px;
+    width: 100%;
+}
+.logo{
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+    transition: 1s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+
+.navigation ul li{
+    
+    list-style: none;
+    display: inline-block;
+    padding-left: 145px;
+    position: relative;
+    
+    
+}
+.navigation ul li a{
+    color: black;
+    text-decoration: none;
+   font-size: 15px;
+   
+}
+
+.navigation ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: orangered;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.navigation ul li:hover::after{
+    width: 100%;
+
+}
+
+
+.navigation :hover{
+    color:gray;
+
+}
+
+
+
+.main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(img/main.jpg) no-repeat;
+    background-size: 1500px 650px;
+    background-position: center;
+    
+}
+
+.main span{
+    
+    font-size: 2.5em;
+    letter-spacing: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(128, 128, 128);
+    text-transform: uppercase; 
+    padding: 7.2em;
+   
+    
+    
+    
+}
+
+
+.btn {
+    color: #fff;
+    text-decoration: none;
+    background-color: orangered;  
+    font-size: 0.9em;
+    font-weight: 200;
+    padding: 0.9375em 2.1875em;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    transition: 1s ease;
+    margin: -20px -600px; 
+    margin-top: 180px;
+    
+}
+
+
+.btn:hover{
+    transform: scale(1.1)
+}
+
+
+#steps {
+    padding-top: 150px;
+    padding-bottom: 100px;;
+    display: flex;
+    justify-content: center;
+    margin-left: 60px;
+    
+}
+
+
+
+#steps ul li {
+    
+	width: 300px;
+	float: left;
+	padding-top: 140px;
+    padding-bottom: 40px;
+	text-align: center;
+	margin-right: 80px;
+    list-style-type: none;
+    box-shadow: 0 0 25px rgba(1 1 1 /15%);
+    border-radius: 20px;
+    
+    
+}
+
+#steps p {
+    font-size: 16px;
+}
+
+#step-1 {
+	background: url('img/steps-icon-1.png') no-repeat 50% 10%;
+    
+    
+}
+#step-2 {
+	background: url('img/steps-icon-2.png') no-repeat 50% 10% ;
+
+
+}
+#step-3 {
+	background: url('img/steps-icon-3.png') no-repeat 50% 10% ;
+
+
+}
+
+/*#possibilities {
+    padding-top: 100px;
+    padding-bottom: 100px;;
+    display: flex;
+    justify-content: center;
+    background-color: #efefef;
+}*/
+
+
+
+/*#possibilities ul li {
+  
+	width: 300px;
+	float: left;
+	padding-top: 140px;
+    padding-bottom: 40px;
+    text-align: center;
+	margin-right: 80px;
+    list-style-type: none;
+    box-shadow: 0 0 25px rgba(1 1 1 /15%);
+    border-radius: 10px;
+    
+}
+*/
+
+
+
+#pos-1 {
+	background: url('img/article-image-1.jpg') no-repeat ;
+    /*background-image: url('img/article-image-1.jpg') ;*/
+    border-radius: 15px;
+}
+
+#pos-2 {
+	background: url('img/article-image-2.jpg') no-repeat ;
+    border-radius: 15px;
+}
+
+#possibilities  {
+   display: flex;
+    padding-top: 270px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    background-color: #efefef;
+    padding-bottom: 200px;
+    
+    
+}
+
+
+.text {
+    padding-top: 270px;
+    text-align: center; 
+    
+}
+
+.text h4{
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.button-2 {
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    background-color: orangered;  
+    font-size: 0.7em;
+    padding: 0.9375em 2.1875em;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    justify-content: center;
+    font-weight: 400;
+
+}
+
+.text a:hover{
+    color: black;
+}
+
+.contact p {
+    font-weight: 100;
+    font-size: 15px;
+    text-align: center;
+    padding: 50px 100px ;
+}
+.contact h1 {
+   font-family: 'center;Crete Round', serif;
+   letter-spacing: 2px;
+   font-size: 40px;
+   border-bottom: 2px solid orangered;
+   width: 400px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  
+}
+
+
+form {
+
+   padding-left: 50px;
+    margin-left: 300px;
+    
+    
+}
+
+input[type='text'] {
+   padding: 10px;
+   margin: 20px;
+    border: #777 solid 2px;
+}
+
+label {
+    font-size: 20px;
+    color: #777;
+    padding: 3px;
+}
+
+.button-3 {
+    background-color: orangered;
+    padding: 0.5375em 1.0875em;
+    border-color: orangered;
+    color: #fff;
+
+}
+
+
+footer {
+    background: #444;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: #fff;
+}
+
+footer h2 {
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+footer span {
+    color: orangered;
+}

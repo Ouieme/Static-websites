@@ -1,0 +1,88 @@
+body{
+    background: #eee url('img/milad-fakurian-nY14Fs8pxT8-unsplash.jpg') no-repeat
+    center/cover;
+    height: 100vh;
+    scroll-behavior: smooth;
+   
+}
+
+
+.titel{
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 15px;
+    
+    font-size: 40px;
+}
+
+.container{
+width: 690px;
+text-align: center;
+margin: auto;
+background-color: rgba(143, 142, 142, 0.397);
+height: 620px;
+width: 522px;
+
+border-radius: 15px;
+font-weight: 50px;
+
+
+}
+
+.case{
+    height: 170px;
+    width: 170px;
+    float: left;
+    margin: 2px;
+    background-color: rgb(22, 22, 22);
+    font-size: 80px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  
+}
+
+span{
+    color: orangered;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.case:hover{
+    background-color: transparent;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+button {
+   
+    color: #fff;
+    background-color: orangered;  
+    font-size: 0.7em;
+    padding: 0.9375em 2.1875em;
+    letter-spacing: 3px;
+    font-weight: 400;
+    border-color: orangered;
+    margin: auto;
+    margin-top: 15px;
+    transition: 1s ease;
+    cursor: pointer;
+    
+}
+
+button:hover{
+    background-color: transparent;
+    color: orangered;
+    font-weight: 700;
+    
+}
+
+.titel1{
+    color: orangered;
+    font-size: 20px;
+    font-weight: 700;
+}
+

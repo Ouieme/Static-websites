@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+    <!-- Lien vers Swiper.js (version hébergée sur CDN) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Lien vers Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Analyse_pauses</title>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <h2 class="title">Texte 1</h2>
+                <p class="paragraph">
+
+                    "Paris ! Paris outragé, Paris brisé, Paris martyrisé, mais Paris libéré ! Libéré par lui-même, libéré par son peuple avec le concours des armées de la France, avec l'appui et le concours de la France tout entière, de la France qui se bat, de la seule France, de la vraie France, de la France éternelle.
+
+                    Bien ! Puisque la France est à Paris, puisque la France est à Paris, puisque la France est à Paris, c'est à Paris que la France parlera au monde entier.
+                    
+                    Et quelle est la situation ? La situation à laquelle nous sommes arrivés grâce à Dieu, par le combat et par l'effort de tous nos amis, est une situation excellente.
+                    
+                    La France reconstituée, la France redevenue elle-même, la France au travail, la France libérée, la France enfin !"</p>
+
+                    <button id="startRecording">Commencer l'enregistrement</button>
+                    <button id="stopRecording" disabled>Arrêter l'enregistrement</button>
+                    <span id="recordingIndicator" style="display: none;">Enregistrement en cours...</span>
+                    <!-- Ajouter un conteneur pour le graphique -->
+                    <canvas id="audioChart" width="400" height="200"></canvas>
+            </div>
+            <div class="swiper-slide">Texte 2</div>
+            <div class="swiper-slide">Texte 3</div>
+        </div>
+        <!-- Ajouter la pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            // Configurations supplémentaires ici
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+    let recorder;
+    let audioChunks = [];
+
+    const startRecordingButton = document.getElementById('startRecording');
+    const stopRecordingButton = document.getElementById('stopRecording');
+
+    startRecordingButton.addEventListener('click', startRecording);
+    stopRecordingButton.addEventListener('click', stopRecording);
+
+    async function startRecording() {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        recorder = new MediaRecorder(stream);
+
+        recorder.ondataavailable = (e) => {
+            if (e.data.size > 0) {
+                audioChunks.push(e.data);
+            }
+        };
+
+        recorder.onstop = () => {
+            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+
+            // Vous pouvez maintenant utiliser audioUrl pour lire l'enregistrement ou l'envoyer au serveur, etc.
+            console.log('Enregistrement terminé. URL audio:', audioUrl);
+            
+            // Ici, vous pouvez utiliser une bibliothèque comme Web Audio API pour analyser le signal audio
+            // et utiliser une autre bibliothèque comme Chart.js pour afficher un graphique.
+
+            // Réinitialiser les variables pour le prochain enregistrement
+            audioChunks = [];
+            startRecordingButton.disabled = false;
+            stopRecordingButton.disabled = true;
+        };
+
+        recorder.start();
+        startRecordingButton.disabled = true;
+        stopRecordingButton.disabled = false;
+    }
+
+    function stopRecording() {
+        if (recorder.state === 'recording') {
+            recorder.stop();
+        }
+    }
+});
+
+    </script>
+</body>
+</html>
